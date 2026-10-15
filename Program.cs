@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using RaceDayy.Data;
+using RaceDayy.Models.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +12,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.AddScoped<IProfileImageService,ProfileImageService>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -33,13 +36,13 @@ using (var scope = app.Services.CreateScope())
         }
     }
 
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
     string email = "admin@admin.com";
     string password = "Admin1@";
 
     if (await userManager.FindByEmailAsync(email) == null)
     {
-        var User = new IdentityUser();
+        var User = new ApplicationUser();
 
         User.UserName = email;
         User.Email = email;
@@ -62,6 +65,7 @@ else
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
