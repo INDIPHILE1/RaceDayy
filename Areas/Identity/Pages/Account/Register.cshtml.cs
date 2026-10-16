@@ -105,7 +105,7 @@ namespace RaceDayy.Areas.Identity.Pages.Account
                     if (imagePath == null)
                     {
                         ModelState.AddModelError("Input.ProfileImage",
-                            "Only JPG, PNG or WEBP images up to 2 MB are allowed.");
+                            "Only JPG, PNG or WEBP images up to 4 MB are allowed.");
                         return Page();
                     }
                 }
