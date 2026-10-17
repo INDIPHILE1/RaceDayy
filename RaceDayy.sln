@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36915.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaceDayy", "RaceDayy.csproj", "{CB419D8A-F4A6-4FC4-B77F-32102CA5F364}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaceDayyTests", "..\RaceDayTests\RaceDayyTests\RaceDayyTests.csproj", "{CF67BD4E-F8C4-46C1-9E44-E961591EBF0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CB419D8A-F4A6-4FC4-B77F-32102CA5F364}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB419D8A-F4A6-4FC4-B77F-32102CA5F364}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB419D8A-F4A6-4FC4-B77F-32102CA5F364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF67BD4E-F8C4-46C1-9E44-E961591EBF0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF67BD4E-F8C4-46C1-9E44-E961591EBF0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF67BD4E-F8C4-46C1-9E44-E961591EBF0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF67BD4E-F8C4-46C1-9E44-E961591EBF0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
