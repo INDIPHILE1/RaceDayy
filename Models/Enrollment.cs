@@ -12,4 +12,4 @@
         public Category? Category { get; set; }
         public Results? Result { get; set; }
     }
-}
+} 
