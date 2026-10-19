@@ -35,6 +35,13 @@ RaceDayy is a full-stack event management system designed for the South African 
 - Browse and enrol in events
 - View personal performance history
 
+
+## Video Walkthrough
+
+Watch the video walkthrough of the RaceDayy Event Management System to see its main features, user roles, dashboards, API functionality, and testing.
+
+**Video Link:** [Watch the RaceDayy Walkthrough](https://youtu.be/MFFXlcaDqYo)
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -49,3 +56,5 @@ RaceDayy is a full-stack event management system designed for the South African 
 4. Open the Package Manager Console and run:
    ```powershell
    Update-Database -Context ApplicationDbContext# RaceDayy
+**Student Name:** Indiphile Diko  
+**Project:** RaceDayy Event Management System  
