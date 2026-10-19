@@ -75,7 +75,7 @@ namespace RaceDayy.Controllers
                     organizer = await _context.Organizers.FirstOrDefaultAsync();
                     if (organizer == null)
                     {
-                        organizer = new Organizer { Name = "System", Email = "system@raceday.com", UserId = userId ?? "" };
+                        organizer = new Organizer { Name = "System", Email = "system@raceday.com", UserId = userId ?? "" }; 
                         _context.Organizers.Add(organizer);
                         await _context.SaveChangesAsync();
                     }
