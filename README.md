@@ -35,6 +35,8 @@ RaceDayy is a full-stack event management system designed for the South African 
 - Browse and enrol in events
 - View personal performance history
 
+#GITHUB ACTIONS WORKFLOW
+<img width="1430" height="712" alt="image" src="https://github.com/user-attachments/assets/98fe2f74-940c-477e-b29c-76cf62eecdef" />
 
 ## Video Walkthrough
 
