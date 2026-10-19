@@ -9,7 +9,7 @@ namespace RaceDayy.Controllers
     public class EventsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-
+         
         public EventsController(ApplicationDbContext context)
         {
             _context = context;

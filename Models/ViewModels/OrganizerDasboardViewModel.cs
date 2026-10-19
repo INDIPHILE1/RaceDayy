@@ -12,7 +12,7 @@
     {
         public int EventID { get; set; }
         public string EventName { get; set; } = string.Empty;
-        public DateTime EventDate { get; set; }
+        public DateTime EventDate { get; set; } 
         public string Status { get; set; } = string.Empty;
         public int CategoryCount { get; set; }
         public int EnrollmentCount { get; set; }

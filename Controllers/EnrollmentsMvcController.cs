@@ -85,7 +85,7 @@ namespace RaceDayy.Controllers
                     PaymentStatus = "Pending"
                 };
                 _context.Enrollments.Add(enrollment);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync(); 
                 TempData["SuccessMessage"] = "Successfully enrolled!";
             }
             else
