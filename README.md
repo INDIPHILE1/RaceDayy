@@ -49,7 +49,7 @@ The application can be run inside a Docker container using the following command
 1. *Build the Docker image:*
    ```bash
    docker build -t racedayy-app .
-: Run the container:
+Indiphile Diko: Run the container:
 
 bash
 docker run -d -p 8080:8080 --name racedayy-container racedayy-app
