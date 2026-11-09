@@ -49,7 +49,7 @@ The application can be run inside a Docker container using the following command
 1. *Build the Docker image:*
    ```bash
    docker build -t racedayy-app .
-[15:06, 11/9/2026] Apfeswaho Nengome 🤍.: Run the container:
+: Run the container:
 
 bash
 docker run -d -p 8080:8080 --name racedayy-container racedayy-app
@@ -66,7 +66,7 @@ GitHub Actions is configured to automatically build the project and run all unit
 
 
 Video Walkthrough
-Watch the Part 3 walkthrough here
+[Watch the Part 3 walkthrough here](https://youtu.be/OmEuaEb_98o)
 
 Author
 Student Number: ST10459365
