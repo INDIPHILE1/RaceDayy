@@ -4,74 +4,125 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RaceDayy</title>
+    <!-- Custom Font for that Energetic Sporting Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            color: #00d2ff !important; /* Energetic Cyan */
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #0f2027, #203a43, #2c5364) !important; /* Deep sporting gradient */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-link {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+            .nav-link:hover {
+                color: #00d2ff !important;
+            }
+
+        .btn-primary {
+            background-color: #ff5722; /* Energetic Orange for primary actions */
+            border-color: #ff5722;
+            font-weight: 700;
+        }
+
+            .btn-primary:hover {
+                background-color: #e64a19;
+                border-color: #e64a19;
+            }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">RaceDayy</a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">RACE DAYY</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navContent">
-                <!-- Left side: main navigation -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="nav-link text-white" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-
-                    <!-- NEW EVENTS LINK -->
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="EventsMvc" asp-action="Index">Events</a>
+                        <a class="nav-link text-white" asp-controller="Events" asp-action="Index">Events</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="/swagger">Swagger API</a>
+                        <a class="nav-link text-white" asp-controller="Enrollments" asp-action="MyEnrollments">My Enrollments</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="EnrollmentsMvc" asp-action="MyEnrollments">Enrollments</a>
+                        <a class="nav-link text-white" href="/swagger">API Docs</a>
                     </li>
 
                     @if (User.IsInRole("Admin"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="UserRoles" asp-action="Index">Manage Users</a>
+                            <a class="nav-link text-warning" asp-controller="UserRoles" asp-action="Index">Manage Users</a>
                         </li>
                     }
 
                     @if (User.IsInRole("Organizer"))
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="OrganizerDashboard" asp-action="Index">Organizer Dashboard</a>
+                            <a class="nav-link text-info" asp-controller="OrganizerDashboard" asp-action="Index">Organizer Dashboard</a>
                         </li>
                     }
                 </ul>
 
-                <!-- Right side: auth -->
                 <ul class="navbar-nav">
                     @if (User.Identity?.IsAuthenticated == true)
                     {
                         <li class="nav-item">
-                            <span class="navbar-text text-white me-3">
-                                Hello @User.Identity.Name!
+                            <span class="navbar-text text-light me-3 fw-bold">
+                                @User.Identity.Name
                             </span>
                         </li>
                         <li class="nav-item">
                             <form asp-area="Identity" asp-page="/Account/Logout" method="post" class="d-inline">
-                                <button type="submit" class="btn btn-outline-light btn-sm">Logout</button>
+                                <button type="submit" class="btn btn-outline-light btn-sm fw-bold">LOGOUT</button>
                             </form>
                         </li>
                     }
                     else
                     {
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                            <a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                            <a class="btn btn-primary btn-sm mt-1 ms-2" asp-area="Identity" asp-page="/Account/Register">SIGN UP</a>
                         </li>
                     }
                 </ul>
@@ -79,12 +130,14 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    <div class="container mt-4" style="min-height: 70vh;">
         @RenderBody()
     </div>
 
-    <footer class="text-center mt-5 mb-3 text-muted">
-        <p>&copy; 2026 - RaceDayy - <a href="/swagger">API Documentation</a></p>
+    <footer class="text-center mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 - RaceDayy Sporting Events - <a href="/swagger" class="text-decoration-none text-info">API Documentation</a></p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
